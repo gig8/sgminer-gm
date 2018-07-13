@@ -7,10 +7,10 @@ Tools needed
 If you intend to build for native x64, then instead of using <Visual Studio Command Prompt>, you will need to use
 Windows SDK 7.1 Command Prompt and run "setenv /x64 /Release" before starting to build anything.
 
-Also, for x64, after you follow all the steps and you are ready to build. Go to "Project Properties -> VC++ Directories -> Library Directories" 
+Also, for x64, after you follow all the steps and you are ready to build. Go to "Project Properties -> VC++ Directories -> Library Directories"
 and add this folder to the library list: C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib\x64
 
-To run sgminer built using Visual Studios you will need to have Microsoft Visual C++ 2013 Redistributable Package (x86 or x64 depending on your sgminer version) installed. 
+To run sgminer built using Visual Studios you will need to have Microsoft Visual C++ 2013 Redistributable Package (x86 or x64 depending on your sgminer version) installed.
 
 Installing dependencies
 -----------------------
@@ -68,7 +68,8 @@ x64 version:
 4. Curl
 -------
 - go to http://curl.haxx.se/download.html and download latest source (>=7.39.0) and extract it somewhere
-- replace original curl winbuild\MakefileBuild.vc with provided winbuild\MakefileBuild.vc (corrected paths and static library names for VC)
+- XXXXX replace original curl winbuild\MakefileBuild.vc with provided winbuild\MakefileBuild.vc (corrected paths and static library names for VC)
+(no good, do not replace, will cause missing vauth error)
 
 x86 version:
 - open Visual Studio Command Prompt (x86)
@@ -90,5 +91,5 @@ If using git run commands below from sgminer/ folder:
 
   git submodule init
   git submodule update
-  
+
 or clone/extract Jansson source from https://github.com/akheron/jansson to submodules/jansson folder.

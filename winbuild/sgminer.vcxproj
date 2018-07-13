@@ -105,8 +105,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)dist\lib\x86;$(ProjectDir)jansson\Debug\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\OpenSSL-Win32\lib;$(ProjectDir)dist\lib\x86;$(ProjectDir)jansson\Debug\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32.lib;ssleay32.lib;Ws2_32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OptimizeReferences>false</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <LinkTimeCodeGeneration>
@@ -147,8 +147,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)dist\lib\x64;$(ProjectDir)jansson\Debug\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\OpenSSL-Win64\lib;$(ProjectDir)dist\lib\x64;$(ProjectDir)jansson\Debug\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32.lib;ssleay32.lib;Ws2_32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OptimizeReferences>false</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <LinkTimeCodeGeneration>
@@ -192,8 +192,8 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)dist\lib\x86;$(ProjectDir)jansson\Release\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\OpenSSL-Win32\lib;$(ProjectDir)dist\lib\x86;$(ProjectDir)jansson\Release\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32.lib;ssleay32.lib;Ws2_32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
       <LinkTimeCodeGeneration>
       </LinkTimeCodeGeneration>
@@ -236,8 +236,8 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)dist\lib\x64;$(ProjectDir)jansson\Release\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\OpenSSL-Win64\lib;$(ProjectDir)dist\lib\x64;$(ProjectDir)jansson\Release\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libeay32.lib;ssleay32.lib;Ws2_32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
       <LinkTimeCodeGeneration>
       </LinkTimeCodeGeneration>
@@ -263,7 +263,14 @@
     <ClCompile Include="..\algorithm.c" />
     <ClCompile Include="..\algorithm\animecoin.c" />
     <ClCompile Include="..\algorithm\bitblock.c" />
+    <ClCompile Include="..\algorithm\blake256.c" />
+    <ClCompile Include="..\algorithm\blakecoin.c" />
     <ClCompile Include="..\algorithm\credits.c" />
+    <ClCompile Include="..\algorithm\cryptonight.c" />
+    <ClCompile Include="..\algorithm\equihash.c" />
+    <ClCompile Include="..\algorithm\eth-sha3.c" />
+    <ClCompile Include="..\algorithm\ethash.c" />
+    <ClCompile Include="..\algorithm\ethgencache.c" />
     <ClCompile Include="..\algorithm\lyra2.c" />
     <ClCompile Include="..\algorithm\lyra2re.c" />
     <ClCompile Include="..\algorithm\lyra2rev2.c" />
@@ -275,6 +282,9 @@
     <ClCompile Include="..\algorithm\x14.c" />
     <ClCompile Include="..\algorithm\fresh.c" />
     <ClCompile Include="..\algorithm\whirlcoin.c" />
+    <ClCompile Include="..\algorithm\yescrypt-opt.c" />
+    <ClCompile Include="..\algorithm\yescrypt.c" />
+    <ClCompile Include="..\algorithm\yescryptcommon.c" />
     <ClCompile Include="..\api.c" />
     <ClCompile Include="..\ccan\opt\helpers.c" />
     <ClCompile Include="..\ccan\opt\opt.c" />
@@ -287,6 +297,7 @@
     <ClCompile Include="..\findnonce.c" />
     <ClCompile Include="..\algorithm\fuguecoin.c" />
     <ClCompile Include="..\algorithm\groestlcoin.c" />
+    <ClCompile Include="..\gbt-util.c" />
     <ClCompile Include="..\hexdump.c" />
     <ClCompile Include="..\algorithm\inkcoin.c" />
     <ClCompile Include="..\logging.c" />
@@ -316,6 +327,7 @@
     <ClCompile Include="..\sph\luffa.c" />
     <ClCompile Include="..\sph\panama.c" />
     <ClCompile Include="..\sph\sha2.c" />
+    <ClCompile Include="..\sph\sha256_Y.c" />
     <ClCompile Include="..\sph\sha2big.c" />
     <ClCompile Include="..\sph\shabal.c" />
     <ClCompile Include="..\sph\shavite.c" />
@@ -323,6 +335,7 @@
     <ClCompile Include="..\sph\skein.c" />
     <ClCompile Include="..\algorithm\twecoin.c" />
     <ClCompile Include="..\sph\whirlpool.c" />
+    <ClCompile Include="..\sysfs-gpu-controls.c" />
     <ClCompile Include="..\util.c" />
   </ItemGroup>
   <ItemGroup>
@@ -330,7 +343,14 @@
     <ClInclude Include="..\algorithm.h" />
     <ClInclude Include="..\algorithm\animecoin.h" />
     <ClInclude Include="..\algorithm\bitblock.h" />
+    <ClInclude Include="..\algorithm\blake256.h" />
+    <ClInclude Include="..\algorithm\blakecoin.h" />
+    <ClInclude Include="..\algorithm\cn-aes-tbls.h" />
     <ClInclude Include="..\algorithm\credits.h" />
+    <ClInclude Include="..\algorithm\cryptonight.h" />
+    <ClInclude Include="..\algorithm\equihash.h" />
+    <ClInclude Include="..\algorithm\eth-sha3.h" />
+    <ClInclude Include="..\algorithm\ethash.h" />
     <ClInclude Include="..\algorithm\lyra2.h" />
     <ClInclude Include="..\algorithm\lyra2re.h" />
     <ClInclude Include="..\algorithm\lyra2rev2.h" />
@@ -343,6 +363,8 @@
     <ClInclude Include="..\algorithm\x14.h" />
     <ClInclude Include="..\algorithm\fresh.h" />
     <ClInclude Include="..\algorithm\whirlcoin.h" />
+    <ClInclude Include="..\algorithm\yescrypt.h" />
+    <ClInclude Include="..\algorithm\yescrypt_core.h" />
     <ClInclude Include="..\api.h" />
     <ClInclude Include="..\arg-nonnull.h" />
     <ClInclude Include="..\bench_block.h" />
@@ -357,6 +379,7 @@
     <ClInclude Include="..\algorithm\fuguecoin.h" />
     <ClInclude Include="..\algorithm\groestlcoin.h" />
     <ClInclude Include="..\algorithm\inkcoin.h" />
+    <ClInclude Include="..\gbt-util.h" />
     <ClInclude Include="..\logging.h" />
     <ClInclude Include="..\algorithm\marucoin.h" />
     <ClInclude Include="..\algorithm\maxcoin.h" />
@@ -390,6 +413,7 @@
     <ClInclude Include="..\sph\sph_types.h" />
     <ClInclude Include="..\algorithm\twecoin.h" />
     <ClInclude Include="..\sph\sph_whirlpool.h" />
+    <ClInclude Include="..\sysfs-gpu-controls.h" />
     <ClInclude Include="..\uthash.h" />
     <ClInclude Include="..\util.h" />
     <ClInclude Include="..\warn-on-use.h" />

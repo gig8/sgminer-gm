@@ -155,13 +155,15 @@ void CNKeccak(uint64_t *output, uint64_t *input, uint32_t Length)
 static inline uint64_t mul128(uint64_t a, uint64_t b, uint64_t* product_hi)
 {
 	uint64_t lo, hi;
-	
+#ifdef WIN32_LEAN_AND_MEAN
+
+#else
 	__asm__("mul %%rdx":
-	"=a" (lo), "=d" (hi):
-	"a" (a), "d" (b));
-	
+	"=a" (lo), "=d" (hi) :
+		"a" (a), "d" (b));
+
 	*product_hi = hi;
-	
+#endif
 	return lo;
 }
 
@@ -206,6 +208,7 @@ void AESExpandKey256(uint32_t *keybuf)
 
 void cryptonight(uint8_t *Output, uint8_t *Input, uint32_t Length, int Variant)
 {
+	/*
 	CryptonightCtx CNCtx;
 	uint64_t text[16], a[2], b[2];
 	uint32_t ExpandedKey1[64], ExpandedKey2[64];
@@ -320,10 +323,12 @@ void cryptonight(uint8_t *Output, uint8_t *Input, uint32_t Length, int Variant)
 			break;
 		}
 	}
+	*/
 }
 
 void cryptonight_regenhash(struct work *work)
 {
+	/*
 	uint32_t data[20];
 	int variant = monero_variant(work);
 	uint32_t *ohash = (uint32_t *)(work->hash);
@@ -339,4 +344,5 @@ void cryptonight_regenhash(struct work *work)
 	free(tmpdbg);
 	
 	//memset(ohash, 0x00, 32);
+	*/
 }

@@ -2052,7 +2052,7 @@ static bool __build_gbt_txns(struct pool *pool, json_t *res_val)
     quit(1, "Failed to calloc txn_hashes in __build_gbt_txns");
 
   if (pool->algorithm.type == ALGO_EQUIHASH) {
-    pool->coinbasetxn = realloc(pool->coinbasetxn, 1 << 22);  // reuse coinbasetxn
+    pool->coinbasetxn = (char *)realloc(pool->coinbasetxn, 1 << 22);  // reuse coinbasetxn
     size_t len = 0;
     for (i = 0; i < pool->gbt_txns; i++) {
       json_t *array_elem = json_array_get(txn_array, i);
